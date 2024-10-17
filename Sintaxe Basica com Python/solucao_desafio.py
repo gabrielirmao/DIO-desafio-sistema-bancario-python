@@ -51,7 +51,7 @@ while True:
         if not extrato:
             print("Não foram realizadas movimentações.")
         else:
-            print(f"Saldo R$ {saldo:.2f}")
+            print(f"Valor em caixa R$ {saldo:.2f}")
 
     elif digito == "q":
         break
