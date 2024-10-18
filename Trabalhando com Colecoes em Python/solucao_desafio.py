@@ -3,8 +3,8 @@ menu = """
 [s] Sacar
 [e] Extrato
 [cu] Criar usuário
-[nc] Nova Conta
-[p] ver usuários
+[nc] Nova conta
+[v] Ver contas
 [q] Sair
 
 => """
@@ -75,6 +75,15 @@ def criar_conta(agencia, numero_conta, usuarios):
         return {"agencia": agencia, "numero_conta": numero_conta, "usuario": usuario}
     #else:
     print("usuario não encontrado, não foi possivel criar conta.")
+    
+def ver_conta(contas):
+    for conta in contas:
+        lista = f"""
+            Agência: {conta["agencia"]},
+            Conta: {conta["numero_conta"]}
+            Dono da conta: {conta["usuario"]["nome"]}
+            """
+        print(lista)
 
 saldo = 0
 limite = 500
@@ -111,8 +120,8 @@ while True:
             contas.append(conta)
             numero_conta += 1
 
-    elif digito == "p":
-         print(usuarios)
+    elif digito == "v":
+        ver_conta(contas)
 
     elif digito == "q":
         break
